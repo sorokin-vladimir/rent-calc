@@ -7,7 +7,7 @@ import { checkAuth } from './middlewares';
 
 function configureRouter() {
   const router = createRouter(routes, {
-    defaultRoute: 'table',
+    defaultRoute: 'home',
   });
 
   router.usePlugin(loggerPlugin);

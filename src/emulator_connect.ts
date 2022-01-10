@@ -27,5 +27,5 @@ export function connect() {
   // firebaseApps previously initialized using initializeApp()
   const fs = getFirestore();
   connectFirestoreEmulator(fs, 'localhost', 8080);
+  /** FIRESTORE */
 }
-/** FIRESTORE */
