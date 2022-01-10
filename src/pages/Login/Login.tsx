@@ -2,12 +2,12 @@ import { FC, useState, useCallback } from 'react';
 import { Button } from '../../components/Button';
 
 import { Input } from '../../components/Input';
-import { useStore } from '../../hooks';
+import { useStores } from '../../hooks';
 
 import styles from './login.module.scss';
 
 export const Login: FC = () => {
-  const { userStore } = useStore();
+  const { userStore } = useStores();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

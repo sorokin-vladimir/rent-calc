@@ -10,7 +10,7 @@ export const App: FC = () => {
 
   if (route.name === 'login') return <Login />;
   if (route.name === 'signup') return <Signup />;
-  if (['table', 'additem'].includes(route.name)) {
+  if (['table', 'home', 'home.oneHome', 'additem'].includes(route.name)) {
     return <LoggedInComponentWrapper />;
   }
 
