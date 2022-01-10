@@ -14,7 +14,8 @@ export class UserStore {
   constructor(private rootStore: RootStore) {
     makeAutoObservable(this);
 
-    const token = localStorage.getItem('accessToken');
+    // TODO: seve in storage refresh token
+    const token = localStorage.getItem('token');
     if (token) {
       this.accessToken = token;
     }
@@ -31,8 +32,8 @@ export class UserStore {
         const { accessToken } = user as unknown as { accessToken: string };
         if (accessToken) {
           this.accessToken = accessToken;
-          localStorage.setItem('accessToken', accessToken);
-          router.navigate('table');
+          localStorage.setItem('token', accessToken);
+          router.navigate('home');
         }
       });
     } catch (err) {
@@ -54,8 +55,8 @@ export class UserStore {
         const { accessToken } = user as unknown as { accessToken: string };
         if (accessToken) {
           this.accessToken = accessToken;
-          localStorage.setItem('accessToken', accessToken);
-          router.navigate('table');
+          localStorage.setItem('token', accessToken);
+          router.navigate('home');
         }
       });
     } catch (err) {
@@ -67,7 +68,7 @@ export class UserStore {
     try {
       const auth = getAuth();
       await signOut(auth);
-      localStorage.removeItem('accessToken');
+      localStorage.removeItem('token');
       router.navigate('login');
     } catch (err) {
       console.error(err);
