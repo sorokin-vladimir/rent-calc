@@ -1,12 +1,12 @@
 import { MobXProviderContext } from 'mobx-react';
 import { useContext } from 'react';
 import { UserStore } from '../stores/UserStore';
-import { TableStore } from '../stores/TableStore';
+import { BillStore } from '../stores/BillStore';
 import { HomeStore } from '../stores/HomeStore';
 
 type Stores = {
   userStore: UserStore;
-  tableStore: TableStore;
+  billStore: BillStore;
   homeStore: HomeStore;
 };
 

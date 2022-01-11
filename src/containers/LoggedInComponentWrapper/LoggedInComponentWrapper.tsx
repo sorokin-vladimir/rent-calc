@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { Button } from '../../components/Button';
 import { useStores } from '../../hooks';
 import { Home } from '../../pages/Home';
-import { OneHome } from '../../pages/OneHome';
+import { Bill } from '../../pages/Bill';
 import { Table } from '../../pages/Table';
 
 import classes from './loggedInComponentWrapper.module.scss';
@@ -22,8 +22,8 @@ export const LoggedInComponentWrapper: FC = () => {
     case 'home':
       Component = <Home />;
       break;
-    case 'home.oneHome':
-      Component = <OneHome homeID={route.params.homeID} />;
+    case 'home.bill':
+      Component = <Bill homeID={route.params.homeID} />;
       break;
     case 'additem':
       Component = <div>add item</div>;

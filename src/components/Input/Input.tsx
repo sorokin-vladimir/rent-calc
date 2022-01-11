@@ -1,38 +1,39 @@
-import { FC, FormEvent } from 'react';
+import { FC, useState } from 'react';
+import { UseFormRegister, Path } from 'react-hook-form';
+import { v4 as uuid } from 'uuid';
+
+import { InputNames } from '../../types';
 
 import styles from './input.module.scss';
 
 type Props = {
-  id: string;
-  onChange?: (value: string) => void;
+  name: Path<InputNames>;
   type?: 'text' | 'email' | 'password' | 'number';
-  value?: string;
   label?: string;
+  options?: Partial<{
+    required: { value: boolean; message: string };
+    minLength: { value: number; message: string };
+    valueAsNumber: boolean;
+  }>;
+  register: UseFormRegister<InputNames>;
 };
 
 export const Input: FC<Props> = ({
-  onChange,
   type = 'text',
-  value,
-  id,
+  name,
   label,
+  options = {},
+  register,
 }) => {
-  const val = typeof value === 'string' ? { value } : {};
+  const [uid] = useState(uuid());
   return (
     <div className={styles.root}>
       {!!label && (
-        <label htmlFor={id} className={styles.label}>
+        <label htmlFor={uid} className={styles.label}>
           {label}
         </label>
       )}
-      <input
-        id={id}
-        onChange={(event: FormEvent<HTMLInputElement>) =>
-          onChange?.(event.currentTarget.value)
-        }
-        type={type}
-        {...val}
-      />
+      <input id={uid} {...register(name, options)} type={type} />
     </div>
   );
 };

@@ -21,3 +21,22 @@ export const checkAuth =
 
     router.navigate('login');
   };
+
+export const setData =
+  () =>
+  (
+    toState: State,
+    fromState: State,
+    done: DoneFn
+  ): boolean | Promise<unknown> | void => {
+    if (toState.name === 'home.bill') {
+      rootStore.homeStore.setCurrentHomeID(toState.params.homeID);
+      rootStore.billStore.getAllFields();
+    }
+    if (fromState?.name === 'home.bill') {
+      rootStore.homeStore.setCurrentHomeID(null);
+      rootStore.billStore.fields.clear();
+    }
+    done();
+    return;
+  };

@@ -1,18 +1,16 @@
-import { Request } from '../utils';
+import { getUrl, Request } from '../utils';
 
 export class HomeService {
   private static BASE_URL =
-    'http://localhost:5001/serverless-2720f/us-central1/api/';
+    'http://localhost:5001/serverless-2720f/us-central1/api/homes';
 
   constructor(private request: Request) {}
 
-  private getUrl(path: Path) {
-    return HomeService.BASE_URL + path;
-  }
+  private getUrl = getUrl(HomeService.BASE_URL);
 
   async getAllHomes() {
     try {
-      const response = await this.request.get(this.getUrl('homes'));
+      const response = await this.request.get(this.getUrl(''));
       return response.json();
     } catch (err) {
       console.error('`Get all homes` error:', err);
@@ -21,7 +19,7 @@ export class HomeService {
 
   async createHome(name: string) {
     try {
-      const response = await this.request.post(this.getUrl('home'), {
+      const response = await this.request.post(this.getUrl(''), {
         body: { name },
       });
       return response.json();
@@ -29,6 +27,8 @@ export class HomeService {
       console.error('`Create home` error:', err);
     }
   }
-}
 
-type Path = 'homes' | 'home';
+  async removeHome(homeID: string) {
+    return this.request.delete(this.getUrl(homeID));
+  }
+}

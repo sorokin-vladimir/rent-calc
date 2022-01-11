@@ -1,10 +1,10 @@
 import { FC, useState } from 'react';
 import { useRouter } from 'react-router5';
-import { useStores } from '../../hooks';
+// import { useStores } from '../../hooks';
 
 export const Table: FC = () => {
   const router = useRouter();
-  const { tableStore } = useStores();
+  // const { tableStore } = useStores();
   const [value, setValue] = useState('');
   const [id, setId] = useState('');
 

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": "./",
     "lib": [
       "dom",
       "dom.iterable",
@@ -18,17 +19,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@components": ["src/components"],
+      "@containers": ["src/containers/index"],
+      "@pages": ["src/pages"],
+    }
   },
   "include": [
     "src"
   ],
   "exclude": [
     "functions"
-  ],
-  "paths": {
-    "@components": "src/components",
-    "@containers": "src/containers",
-    "@pages": "src/pages",
-  }
+  ]
 }

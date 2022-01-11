@@ -38,6 +38,14 @@ export class HomeStore {
     });
   }
 
+  async removeHome(homeId: string) {
+    const response = await this.homeService.removeHome(homeId);
+    if (response.status === 204) {
+      const homeToDel = this.homes.find((home) => home.id === homeId);
+      if (homeToDel) this.homes.remove(homeToDel);
+    }
+  }
+
   setCurrentHomeID(id: string | null) {
     this.currentHomeID = id;
   }
