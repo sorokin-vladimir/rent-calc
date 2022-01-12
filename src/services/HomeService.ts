@@ -1,8 +1,8 @@
+import { API_URL } from 'src/init';
 import { getUrl, Request } from '../utils';
 
 export class HomeService {
-  private static BASE_URL =
-    'http://localhost:5001/serverless-2720f/us-central1/api/homes';
+  private static BASE_URL = `${API_URL}/api/homes`;
 
   constructor(private request: Request) {}
 

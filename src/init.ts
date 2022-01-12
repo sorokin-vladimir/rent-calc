@@ -19,6 +19,12 @@ export const app = initializeApp({
   appId,
 });
 
-if (process.env.ENV === 'development') {
+const isDev = process.env.ENV === 'development';
+
+if (isDev) {
   connect();
 }
+
+export const API_URL = isDev
+  ? 'http://localhost:5001/serverless-2720f/us-central1'
+  : 'https://us-central1-serverless-2720f.cloudfunctions.net';

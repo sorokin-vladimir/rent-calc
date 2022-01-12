@@ -1,9 +1,9 @@
+import { API_URL } from 'src/init';
 import { InputNames } from '../types';
 import { getUrl, Request } from '../utils';
 
 export class BillService {
-  private static BASE_URL =
-    'http://localhost:5001/serverless-2720f/us-central1/api/bill';
+  private static BASE_URL = `${API_URL}/api/bill`;
 
   constructor(private request: Request) {}
 
