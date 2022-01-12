@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/rent-calc/static/css/main.ce092fbe.css",
-    "main.js": "/rent-calc/static/js/main.6335c4b3.js",
+    "main.js": "/rent-calc/static/js/main.acb9cf44.js",
     "index.html": "/rent-calc/index.html",
     "main.ce092fbe.css.map": "/rent-calc/static/css/main.ce092fbe.css.map",
-    "main.6335c4b3.js.map": "/rent-calc/static/js/main.6335c4b3.js.map"
+    "main.acb9cf44.js.map": "/rent-calc/static/js/main.acb9cf44.js.map"
   },
   "entrypoints": [
     "static/css/main.ce092fbe.css",
-    "static/js/main.6335c4b3.js"
+    "static/js/main.acb9cf44.js"
   ]
 }
