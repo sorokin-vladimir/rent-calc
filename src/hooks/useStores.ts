@@ -4,7 +4,7 @@ import { UserStore } from '../stores/UserStore';
 import { BillStore } from '../stores/BillStore';
 import { HomeStore } from '../stores/HomeStore';
 
-type Stores = {
+export type Stores = {
   userStore: UserStore;
   billStore: BillStore;
   homeStore: HomeStore;
