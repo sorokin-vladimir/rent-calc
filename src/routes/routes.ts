@@ -1,8 +1,8 @@
 export const routes = [
-  { name: 'login', path: '/login' },
-  { name: 'signup', path: '/signup' },
-  { name: 'home', path: '/home' },
-  { name: 'home.bill', path: '/:homeID' },
-  { name: 'table', path: '/table' },
-  { name: 'additem', path: '/additem' },
+  { name: 'login', path: '/rent-calc/login' },
+  { name: 'signup', path: '/rent-calc/signup' },
+  { name: 'home', path: '/rent-calc/home' },
+  { name: 'home.bill', path: '/rent-calc/:homeID' },
+  { name: 'table', path: '/rent-calc/table' },
+  { name: 'additem', path: '/rent-calc/additem' },
 ];
