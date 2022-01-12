@@ -25,6 +25,7 @@ jobs:
     - name: Generate build 🔧
       run: npm run build
       env:
+        NODE_ENV: production
         REACT_APP_API_KEY: ${{ secrets.API_KEY }}
         REACT_APP_AUTH_DOMAIN: ${{ secrets.AUTH_DOMAIN }}
         REACT_APP_PROJECT_ID: ${{ secrets.PROJECT_ID }}
