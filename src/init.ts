@@ -19,6 +19,6 @@ export const app = initializeApp({
   appId,
 });
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.ENV === 'development') {
   connect();
 }
