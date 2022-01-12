@@ -2,6 +2,7 @@
   "name": "rent-calc",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sorokin-vladimir.github.io/rent-calc/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
