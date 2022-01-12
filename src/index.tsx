@@ -7,10 +7,9 @@ import { App } from './containers';
 // import { reportWebVitals } from './reportWebVitals';
 import { router } from './routes';
 import { stores } from './stores';
+import './init';
 
 import './index.css';
-
-import './init';
 
 router.start();
 
